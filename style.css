@@ -1,0 +1,487 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+    font-family:"Roboto";
+    scroll-behavior: smooth;
+}
+
+:root{
+    --main-font-color: #2c65c1;
+    --main-white: #ffffff;
+    --main-font-dark-gray: #4d4d4d;
+    --main-footer-bg-color: #141414;
+    --main-font-family: "URW Chancery L";
+}
+
+section{
+    padding: 6rem 0;
+}
+
+p{
+    line-height: 1.5;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--main-font-dark-gray);
+}
+
+a{
+    text-decoration:none;
+    color: var(--main-white);
+}
+
+.btn{
+    display: inline-block;
+    transition: all 650ms;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+.custom-font{
+    font-family: var(--main-font-family);
+    color: var(--main-font-color);
+    font-size: 6.5rem;
+    line-height: 1;
+    font-weight: 100;
+}
+
+.custom-font-secondary{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-right: -5px;
+    font-size: 2.5rem;
+    line-height: .2;
+    color: var(--main-font-dark-gray);
+    margin-bottom: 5rem;
+}
+
+.custom-font-secondary1{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-right: -5px;
+    font-size: 2.5rem;
+    line-height: .2;
+    color: var(--main-white);
+    margin-bottom: 5rem;
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.between-sec{
+    padding: 25rem 0;
+    text-align: center;
+}
+
+.between-sec-color{
+    color: var(--main-white);
+}
+
+
+header{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,.9), transparent),
+    url("images/main.jpg") bottom no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+}
+
+.main-text{
+    line-height: 0;
+    margin: auto;
+    color: #ffffff;
+    user-select: none;
+
+}
+
+.main-text h1{
+    font-family: var(--main-font-family);
+    color: var(--main-font-color);
+    font-size: 8rem;
+    font-weight: 100;
+    margin-bottom: 5rem;
+}
+
+.main-text h2{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-right: -5px;
+    font-size: 2rem;
+    line-height: 1;
+    position: relative;
+}
+
+.main-text h2::before,
+.main-text h2::after{
+    content: "";
+    width: 5rem;
+    height: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    background-color: var(--main-white);
+    border-radius: 8px;
+}
+
+.main-text h2::before{
+    left: -0.5rem;
+}
+
+.main-text h2::after{
+    right: -0.5rem;
+}
+
+.btn-resume{
+    font-size: 1.5rem;
+    color: #141414;
+    border: 2px solid var(--main-font-color);
+    padding: 2rem 2.5rem;
+    letter-spacing: 3px;
+    margin-right: -3px;
+    position: relative;
+    margin-top: 1rem;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.btn-resume:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+}
+
+.btn-resume:active{
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.btn-linkd{
+    font-size: 1.5rem;
+    color: #141414;
+    border: 2px solid var(--main-font-color);
+    padding: 2rem 2.5rem;
+    letter-spacing: 3px;
+    margin-left: -3px;
+    position: relative;
+    margin-top: 3rem;
+}
+
+.btn-linkd:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+}
+
+.btn-linkd:active{
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.btn-email{
+    font-size: 1.5rem;
+    color: #141414;
+    border: 2px solid var(--main-font-color);
+    padding: 2rem 2.5rem;
+    letter-spacing: 3px;
+    margin-right: -3px;
+    position: relative;
+    margin-top: 3rem;
+}
+
+.btn-email:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+}
+
+.btn-email:active{
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.menu{
+    padding: 2rem 2.5rem;
+    position: fixed;
+    top: 3rem;
+    right: 3rem;
+    background-color: rgba(0,0,0,.5);
+    z-index: 999;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.menu .bar,
+.menu .bar::before,
+.menu .bar::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 4rem;
+    background-color: var(--main-white);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transition: 650ms;
+}
+
+.menu .bar:before{
+    top: -2rem;
+}
+
+.menu .bar::after{
+    top: 2rem;
+}
+
+.active .bar{
+    background-color: transparent;
+}
+
+.active .bar::before{
+    transform: rotate(45deg);
+}
+
+.active .bar::after{
+    transform: rotate(-45deg);
+}
+
+.active .bar::before,
+.active .bar::after{
+    top: 0;
+}
+
+#logo{
+    display: none;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 300;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -5px;
+}
+
+.nav{
+    width: 100%;
+    height: 6rem;
+    line-height: 6rem;
+    position: relative;
+}
+
+.overlay{
+    background-color: rgba(0,0,0,0.95);
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: opacity 650ms;
+    transform: scale(0);
+    opacity: 0;
+}
+
+.overlay.menu-open{
+    transform: scale(1);
+    opacity: 1;
+}
+
+.nav .overlay ul{
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav .overlay ul li{
+    text-transform: uppercase;
+}
+
+.nav .overlay ul li a{
+    display: block;
+    font-size: 2rem;
+    transition: all 650ms;
+}
+
+.nav .overlay ul li a:hover,
+.nav .overlay ul li a .active:hover{
+    color: var(--main-font-color);
+}
+
+.store{
+    width: 100%;
+    height: 60rem;
+    min-height: 30rem;
+    background: url("images/Vex1.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.split1{
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,.5),
+                rgba(0,0,0,0.5)), url("images/split1.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.split2{
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,.5),
+                rgba(0,0,0,0.5)), url("images/split2.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.image-group{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px; 
+}
+
+.image-group img{
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+}
+
+.footer{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    background-color: var(--main-footer-bg-color);
+    padding: 5rem 0;
+    font-size: 1.8rem;
+    color: var(--main-white);
+}
+
+@media screen and (min-width: 769px){
+    header,
+    .between-sec{
+        background-attachment: fixed;
+    }
+
+    .menu{
+        display: none;
+    }
+
+    .nav{
+        display: flex;
+        padding: 2rem 10rem 0;
+        justify-content: space-between;
+    }
+
+    #logo{
+        display: block;
+    }
+
+    .nav .overlay{
+        position: initial;
+        background: none;
+        opacity: initial;
+        transform: initial;
+    }
+
+    .nav .overlay ul{
+        flex-direction: row;
+        list-style: none;
+        margin-top: 2px;
+    }
+
+    .nav .overlay ul li a{
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        margin-right: -1px;
+        padding: 0 2rem;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .center{
+        flex: 1;
+    }
+
+    .add-flex{
+        flex: 1;
+    }
+
+    .add-padding-right{
+        padding: 10rem;
+    }
+
+    .first{
+        order: 1;
+    }
+
+    .second{
+        order: 2;
+    }
+
+    .store{
+        min-height: 40rem;
+    }
+
+    .btn-resume{
+        font-size: 1.8rem;
+    }
+
+    .btn-email{
+        font-size: 1.8rem;
+    }
+
+    .btn-linkd{
+        font-size: 1.8rem;
+    }
+
+    .main-text h1{
+        transform: translateY(4rem);
+        opacity: 0;
+        animation: .5s fadeUp .5s forwards;
+
+    }
+
+    .main-text h2{
+        transform: scale(2);
+        opacity: 0;
+        animation: fadeIn .5s forwards;
+    }
+
+    @keyframes fadeIn {
+        0%{
+            transform: scale(2);
+            opacity: 0;
+        }
+        100%{
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeUp {
+        0%{
+            transform: translateY(4rem);
+            opacity: 0;
+        }
+        100%{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
+
+
+
+
+
