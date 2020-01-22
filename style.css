@@ -91,7 +91,7 @@ header{
     width: 100%;
     height: 100vh;
     background: linear-gradient(to bottom, rgba(0,0,0,.9), transparent),
-    url("images/main.jpg") bottom no-repeat;
+    url("images/CAR.jpg") bottom no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
