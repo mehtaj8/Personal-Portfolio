@@ -28,7 +28,7 @@ function init() {
   var slide = new Slide(width, height, 'out');
 	var l1 = new THREE.ImageLoader();
 	l1.setCrossOrigin('Anonymous');
-	l1.load('images/ARDUINO.jpg', function(img) {
+	l1.load('https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/winter.jpg', function(img) {
 	  slide.setImage(img);
 	})
   root.scene.add(slide);
