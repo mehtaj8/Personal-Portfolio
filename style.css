@@ -122,10 +122,15 @@ nav {
   font-size: 16px;
 }
 
-section {
+#sectionone{
   height: 100vh;
   overflow: hidden;
   border-radius: 0 0 30% 30%;
+}
+
+#sectiontwo{
+  height: 150vh;
+  overflow: hidden;
 }
 
 .bg img {
@@ -203,12 +208,11 @@ section {
   color: #fff;
   letter-spacing: 20px;
   position: absolute;
-  top: 100vh;
-  left: 32vw;
+  margin-top: 5%;
+  left: 35%;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .container{
@@ -216,10 +220,12 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1900px;
+  width: 1300px;
   transform-style: preserve-3d;
-  padding-top: 15%;
-  padding-left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  flex-wrap: wrap;
 }
 
 .container .box1 {
