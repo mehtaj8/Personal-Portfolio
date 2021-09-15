@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -8,7 +12,7 @@ body {
 }
 
 nav {
-  position: fixed;
+  position: absolute;
   z-index: 100;
   height: 8vh;
   width: 96%;
@@ -24,96 +28,92 @@ nav {
   left: 50vw;
 }
 
-.nav-links a{
-    position: absolute;
+.nav-links a {
+  position: absolute;
 }
 
-.nav-links a:nth-child(1){
-    left: 30vw;
-    top: 0vh;
-    animation: rotation1 60s linear infinite;
-    animation-duration: 15s;
+.nav-links a:nth-child(1) {
+  left: 30vw;
+  top: 0vh;
+  animation: rotation1 60s linear infinite;
+  animation-duration: 15s;
 }
 @keyframes rotation1 {
-    25%{
-        transform: translate(-30vw, +25vh);
-    }
-    50%{
-        transform: translate(-60vw, 0vh);
-    }
-    75%{
-        transform: translate(-30vw, -25vh);
-    }
-    100%{
-        transform: translate(0vw, 0vh);
-    }
-    
+  25% {
+    transform: translate(-30vw, +25vh);
+  }
+  50% {
+    transform: translate(-60vw, 0vh);
+  }
+  75% {
+    transform: translate(-30vw, -25vh);
+  }
+  100% {
+    transform: translate(0vw, 0vh);
+  }
 }
 
-.nav-links a:nth-child(2){
-    left: -30vw;
-    top: 0vh;
-    animation: rotation2 60s linear infinite;
-    animation-duration: 15s;
+.nav-links a:nth-child(2) {
+  left: -30vw;
+  top: 0vh;
+  animation: rotation2 60s linear infinite;
+  animation-duration: 15s;
 }
 @keyframes rotation2 {
-    25%{
-        transform: translate(30vw, -25vh);
-    }
-    50%{
-        transform: translate(60vw, 0vh);
-    }
-    75%{
-        transform: translate(30vw, 25vh);
-    }
-    100%{
-        transform: translate(0vw, 0vh);
-    }
-    
+  25% {
+    transform: translate(30vw, -25vh);
+  }
+  50% {
+    transform: translate(60vw, 0vh);
+  }
+  75% {
+    transform: translate(30vw, 25vh);
+  }
+  100% {
+    transform: translate(0vw, 0vh);
+  }
 }
 
-.nav-links a:nth-child(3){
-    left: 0vw;
-    top: 25vh;
-    animation: rotation3 60s linear infinite;
-    animation-duration: 15s;
+.nav-links a:nth-child(3) {
+  left: 0vw;
+  top: 25vh;
+  animation: rotation3 60s linear infinite;
+  animation-duration: 15s;
 }
 @keyframes rotation3 {
-    25%{
-        transform: translate(-30vw, -25vh);
-    }
-    50%{
-        transform: translate(0vw, -50vh);
-    }
-    75%{
-        transform: translate(30vw, -25vh);
-    }
-    100%{
-        transform: translate(0vw, 0vh);
-    }
-    
+  25% {
+    transform: translate(-30vw, -25vh);
+  }
+  50% {
+    transform: translate(0vw, -50vh);
+  }
+  75% {
+    transform: translate(30vw, -25vh);
+  }
+  100% {
+    transform: translate(0vw, 0vh);
+  }
 }
 
-.nav-links a:nth-child(4){
-    left: 0vw;
-    top: -25vh;
-    animation: rotation4 60s linear infinite;
-    animation-duration: 15s;
+.nav-links a:nth-child(4) {
+  left: 0vw;
+  top: -25vh;
+  animation: rotation4 60s linear infinite;
+  animation-duration: 15s;
 }
 @keyframes rotation4 {
-    25%{
-        transform: translate(30vw, 25vh);
-    }
-    50%{
-        transform: translate(0vw, 50vh);
-    }
-    75%{
-        transform: translate(-30vw, 25vh);
-    }
-    100%{
-        transform: translate(0vw, 0vh);
-    }
-    
+  25% {
+    transform: translate(30vw, 25vh);
+  }
+  50% {
+    transform: translate(0vw, 50vh);
+  }
+  75% {
+    transform: translate(-30vw, 25vh);
+  }
+  100% {
+    transform: translate(0vw, 0vh);
+  }
 }
 
 .logo {
@@ -125,6 +125,7 @@ nav {
 section {
   height: 100vh;
   overflow: hidden;
+  border-radius: 0 0 30% 30%;
 }
 
 .bg img {
@@ -194,4 +195,500 @@ section {
   height: 110vh;
   z-index: 3;
   filter: brightness(0.5);
+}
+
+.title{
+  font-family: "AlphaCentauri" !important;
+  font-size: 5vw;
+  color: #fff;
+  letter-spacing: 20px;
+  position: absolute;
+  top: 100vh;
+  left: 32vw;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1900px;
+  transform-style: preserve-3d;
+  padding-top: 15%;
+  padding-left: 0;
+}
+
+.container .box1 {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 40px;
+  background: #232323;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+}
+
+.container .box1::before{
+  content: 'Dijkstras';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 4em;
+  font-weight: 900;
+  color: #fff;
+  font-style: italic;
+  opacity: 0;
+}
+
+.container .box1::after{
+  content: 'Visualizer';
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 4em;
+  font-weight: 900;
+  color: #fff;
+  font-style: italic;
+  opacity: 0;
+}
+
+.container .box1:hover::before,
+.container .box1:hover::after{
+  opacity: 0.04;
+}
+
+.container .box1 .name{
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform: translate3d(0,0,75px);
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 10;
+}
+
+.container .box1:hover .name{
+  top: 40px;
+  opacity: 1;
+}
+
+.container .box1 .link
+{
+  position: absolute;
+  bottom:0;
+  left:50%;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%,0,75px);
+  color: #fff;
+  background: #333;
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 10;
+}
+
+.container .box1:hover .link{
+  bottom: 30px;
+  opacity: 1;
+}
+
+.container .box1 .project{
+  position: absolute;
+  top:50%;
+  left:50%;
+  max-width: 300px;
+  transition: 0.5s;
+  z-index: 11;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%,-50%,0px);
+}
+
+.container .box2 {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 40px;
+  background: #232323;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+}
+
+.container .box2::before{
+  content: 'A Star';
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  font-size: 4em;
+  font-weight: 900;
+  color: #fff;
+  font-style: italic;
+  opacity: 0;
+}
+
+.container .box2::after{
+  content: 'Visualizer';
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 4em;
+  font-weight: 900;
+  color: #fff;
+  font-style: italic;
+  opacity: 0;
+}
+
+.container .box2:hover::before,
+.container .box2:hover::after{
+  opacity: 0.04;
+}
+
+.container .box2 .name{
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform: translate3d(0,0,75px);
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 10;
+}
+
+.container .box2:hover .name{
+  top: 40px;
+  opacity: 1;
+}
+
+.container .box2 .link
+{
+  position: absolute;
+  bottom:0;
+  left:50%;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%,0,75px);
+  color: #fff;
+  background: #333;
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 10;
+}
+
+.container .box2:hover .link{
+  bottom: 30px;
+  opacity: 1;
+}
+
+.container .box2 .project{
+  position: absolute;
+  top:50%;
+  left:50%;
+  max-width: 300px;
+  transition: 0.5s;
+  z-index: 11;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%,-50%,0px);
+}
+
+.container .box3 {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 40px;
+  background: #232323;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+}
+
+.container .box3::before{
+  content: 'Maze';
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  font-size: 4em;
+  font-weight: 900;
+  color: #fff;
+  font-style: italic;
+  opacity: 0;
+}
+
+.container .box3::after{
+  content: 'Generator';
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 4em;
+  font-weight: 900;
+  color: #fff;
+  font-style: italic;
+  opacity: 0;
+}
+
+.container .box3:hover::before,
+.container .box3:hover::after{
+  opacity: 0.04;
+}
+
+.container .box3 .name{
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform: translate3d(0,0,75px);
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 10;
+}
+
+.container .box3:hover .name{
+  top: 40px;
+  opacity: 1;
+}
+
+.container .box3 .link
+{
+  position: absolute;
+  bottom:0;
+  left:50%;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%,0,75px);
+  color: #fff;
+  background: #333;
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 10;
+}
+
+.container .box3:hover .link{
+  bottom: 30px;
+  opacity: 1;
+}
+
+.container .box3 .project{
+  position: absolute;
+  top:50%;
+  left:50%;
+  max-width: 300px;
+  transition: 0.5s;
+  z-index: 11;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%,-50%,0px);
+}
+
+.container .box4 {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 40px;
+  background: #232323;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+}
+
+.container .box4::before{
+  content: 'Euneva';
+  position: absolute;
+  top: 20px;
+  left: 35px;
+  font-size: 4em;
+  font-weight: 900;
+  color: #fff;
+  font-style: italic;
+  opacity: 0;
+}
+
+.container .box4:hover::before,
+.container .box4:hover::after{
+  opacity: 0.04;
+}
+
+.container .box4 .name{
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform: translate3d(0,0,75px);
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 10;
+}
+
+.container .box4:hover .name{
+  top: 40px;
+  opacity: 1;
+}
+
+.container .box4 .link
+{
+  position: absolute;
+  bottom:0;
+  left:50%;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%,0,75px);
+  color: #fff;
+  background: #333;
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 10;
+  
+}
+
+.container .box4:hover .link{
+  bottom: 30px;
+  opacity: 1;
+}
+
+.container .box4 .project{
+  position: absolute;
+  top:25%;
+  left:0;
+  max-width: 300px;
+  transition: 0.5s;
+  z-index: 11;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%,-50%,0px);
+}
+
+.container .box5 {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 40px;
+  background: #232323;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+}
+
+.container .box5::before{
+  content: 'SafeWayz';
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-size: 4em;
+  font-weight: 900;
+  color: #fff;
+  font-style: italic;
+  opacity: 0;
+}
+
+.container .box5:hover::before,
+.container .box5:hover::after{
+  opacity: 0.04;
+}
+
+.container .box5 .name{
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform: translate3d(0,0,75px);
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 10;
+}
+
+.container .box5:hover .name{
+  top: 40px;
+  opacity: 1;
+}
+
+.container .box5 .link
+{
+  position: absolute;
+  bottom:0;
+  left:50%;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%,0,75px);
+  color: #fff;
+  background: #333;
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 10;
+  
+}
+
+.container .box5:hover .link{
+  bottom: 30px;
+  opacity: 1;
+}
+
+.container .box5 .project{
+  position: absolute;
+  top:25%;
+  left:0;
+  max-width: 300px;
+  transition: 0.5s;
+  z-index: 11;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%,-50%,0px);
+}
+
+.container .box1:hover .project{
+  transform: translate3d(-50%,-50%,100px) rotate(-15 deg);
+}
+
+.container .project{
+  transform: scale(0.2);
+}
+
+.container .box4 .project{
+  transform: scale(0.75);
+}
+
+.container .box5 .project{
+  transform: scale(0.75);
+}
+
+.container .link{
+  text-align: center;
+}
+
+::-webkit-scrollbar{
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(transparent, #30ff00);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: linear-gradient(transparent, #00c6ff);
 }
