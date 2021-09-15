@@ -1,5 +1,139 @@
-html{
+html {
   scroll-behavior: smooth;
+}
+
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+#loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  z-index: 1000;
+  background: #000;
+}
+
+#loader {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  z-index: 1001;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: blue;
+
+  -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+#loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: rgb(0, 110, 255);
+
+  -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: rgb(0, 247, 255);
+
+  -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(0deg); /* IE 9 */
+    transform: rotate(0deg); /* Firefox 16+, IE 10+, Opera } */
+  }
+  100% {
+    -webkit-transform: rotate(360deg); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg); /* IE 9 */
+    transform: rotate(360deg); /* Firefox 16+, IE 10+, Opera } */
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(0deg); /* IE 9 */
+    transform: rotate(0deg); /* Firefox 16+, IE 10+, Opera } */
+  }
+  100% {
+    -webkit-transform: rotate(360deg); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg); /* IE 9 */
+    transform: rotate(360deg); /* Firefox 16+, IE 10+, Opera } */
+  }
+}
+
+#loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+  right: 0;
+}
+
+.loaded #loader-wrapper .loader-section.section-left {
+  -webkit-transform: translateX(-100%); /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(-100%); /* IE 9 */
+  transform: translateX(-100%); /* Firefox 16+, IE 10+, Opera } */
+
+  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1); /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1); /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+  -webkit-transform: translateX(100%); /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(100%); /* IE 9 */
+  transform: translateX(100%); /* Firefox 16+, IE 10+, Opera } */
+
+  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1); /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1); /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+}
+
+.loader #loader {
+  opacity: 0;
+
+  -webkit-transition: all 0.3s ease-out; /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+  transition: all 0.3s ease-out; /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+}
+
+.loaded #loader-wrapper {
+  visibility: hidden;
+
+  -webkit-transform: translateY(-100%); /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateY(-100%); /* IE 9 */
+  transform: translateY(-100%); /* Firefox 16+, IE 10+, Opera } */
+
+  -webkit-transition: all 0.3s 1s ease-out; /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+  transition: all 0.3s 1s ease-out; /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
 }
 
 body {
@@ -122,13 +256,13 @@ nav {
   font-size: 16px;
 }
 
-#sectionone{
+#sectionone {
   height: 100vh;
   overflow: hidden;
   border-radius: 0 0 30% 30%;
 }
 
-#sectiontwo{
+#sectiontwo {
   height: 150vh;
   overflow: hidden;
 }
@@ -202,7 +336,7 @@ nav {
   filter: brightness(0.5);
 }
 
-.title{
+.title {
   font-family: "AlphaCentauri" !important;
   font-size: 5vw;
   color: #fff;
@@ -215,7 +349,7 @@ nav {
   overflow: hidden;
 }
 
-.container{
+.container {
   position: relative;
   display: flex;
   justify-content: center;
@@ -238,8 +372,8 @@ nav {
   transform-style: preserve-3d;
 }
 
-.container .box1::before{
-  content: 'Dijkstras';
+.container .box1::before {
+  content: "Dijkstras";
   position: absolute;
   top: 20px;
   left: 20px;
@@ -250,8 +384,8 @@ nav {
   opacity: 0;
 }
 
-.container .box1::after{
-  content: 'Visualizer';
+.container .box1::after {
+  content: "Visualizer";
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -263,11 +397,11 @@ nav {
 }
 
 .container .box1:hover::before,
-.container .box1:hover::after{
+.container .box1:hover::after {
   opacity: 0.04;
 }
 
-.container .box1 .name{
+.container .box1 .name {
   position: absolute;
   top: 0;
   left: 0;
@@ -275,24 +409,23 @@ nav {
   color: #fff;
   width: 100%;
   transform-style: preserve-3d;
-  transform: translate3d(0,0,75px);
+  transform: translate3d(0, 0, 75px);
   transition: 0.5s;
   opacity: 0;
   z-index: 10;
 }
 
-.container .box1:hover .name{
+.container .box1:hover .name {
   top: 40px;
   opacity: 1;
 }
 
-.container .box1 .link
-{
+.container .box1 .link {
   position: absolute;
-  bottom:0;
-  left:50%;
+  bottom: 0;
+  left: 50%;
   transform-style: preserve-3d;
-  transform: translate3d(-50%,0,75px);
+  transform: translate3d(-50%, 0, 75px);
   color: #fff;
   background: #333;
   padding: 10px 25px;
@@ -303,21 +436,21 @@ nav {
   z-index: 10;
 }
 
-.container .box1:hover .link{
+.container .box1:hover .link {
   bottom: 30px;
   opacity: 1;
 }
 
-.container .box1 .project{
+.container .box1 .project {
   position: absolute;
-  top:50%;
-  left:50%;
+  top: 50%;
+  left: 50%;
   max-width: 300px;
   transition: 0.5s;
   z-index: 11;
   transition: 0.5s;
   transform-style: preserve-3d;
-  transform: translate3d(-50%,-50%,0px);
+  transform: translate3d(-50%, -50%, 0px);
 }
 
 .container .box2 {
@@ -330,8 +463,8 @@ nav {
   transform-style: preserve-3d;
 }
 
-.container .box2::before{
-  content: 'A Star';
+.container .box2::before {
+  content: "A Star";
   position: absolute;
   top: 20px;
   left: 50px;
@@ -342,8 +475,8 @@ nav {
   opacity: 0;
 }
 
-.container .box2::after{
-  content: 'Visualizer';
+.container .box2::after {
+  content: "Visualizer";
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -355,11 +488,11 @@ nav {
 }
 
 .container .box2:hover::before,
-.container .box2:hover::after{
+.container .box2:hover::after {
   opacity: 0.04;
 }
 
-.container .box2 .name{
+.container .box2 .name {
   position: absolute;
   top: 0;
   left: 0;
@@ -367,24 +500,23 @@ nav {
   color: #fff;
   width: 100%;
   transform-style: preserve-3d;
-  transform: translate3d(0,0,75px);
+  transform: translate3d(0, 0, 75px);
   transition: 0.5s;
   opacity: 0;
   z-index: 10;
 }
 
-.container .box2:hover .name{
+.container .box2:hover .name {
   top: 40px;
   opacity: 1;
 }
 
-.container .box2 .link
-{
+.container .box2 .link {
   position: absolute;
-  bottom:0;
-  left:50%;
+  bottom: 0;
+  left: 50%;
   transform-style: preserve-3d;
-  transform: translate3d(-50%,0,75px);
+  transform: translate3d(-50%, 0, 75px);
   color: #fff;
   background: #333;
   padding: 10px 25px;
@@ -395,21 +527,21 @@ nav {
   z-index: 10;
 }
 
-.container .box2:hover .link{
+.container .box2:hover .link {
   bottom: 30px;
   opacity: 1;
 }
 
-.container .box2 .project{
+.container .box2 .project {
   position: absolute;
-  top:50%;
-  left:50%;
+  top: 50%;
+  left: 50%;
   max-width: 300px;
   transition: 0.5s;
   z-index: 11;
   transition: 0.5s;
   transform-style: preserve-3d;
-  transform: translate3d(-50%,-50%,0px);
+  transform: translate3d(-50%, -50%, 0px);
 }
 
 .container .box3 {
@@ -422,8 +554,8 @@ nav {
   transform-style: preserve-3d;
 }
 
-.container .box3::before{
-  content: 'Maze';
+.container .box3::before {
+  content: "Maze";
   position: absolute;
   top: 20px;
   left: 50px;
@@ -434,8 +566,8 @@ nav {
   opacity: 0;
 }
 
-.container .box3::after{
-  content: 'Generator';
+.container .box3::after {
+  content: "Generator";
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -447,11 +579,11 @@ nav {
 }
 
 .container .box3:hover::before,
-.container .box3:hover::after{
+.container .box3:hover::after {
   opacity: 0.04;
 }
 
-.container .box3 .name{
+.container .box3 .name {
   position: absolute;
   top: 0;
   left: 0;
@@ -459,24 +591,23 @@ nav {
   color: #fff;
   width: 100%;
   transform-style: preserve-3d;
-  transform: translate3d(0,0,75px);
+  transform: translate3d(0, 0, 75px);
   transition: 0.5s;
   opacity: 0;
   z-index: 10;
 }
 
-.container .box3:hover .name{
+.container .box3:hover .name {
   top: 40px;
   opacity: 1;
 }
 
-.container .box3 .link
-{
+.container .box3 .link {
   position: absolute;
-  bottom:0;
-  left:50%;
+  bottom: 0;
+  left: 50%;
   transform-style: preserve-3d;
-  transform: translate3d(-50%,0,75px);
+  transform: translate3d(-50%, 0, 75px);
   color: #fff;
   background: #333;
   padding: 10px 25px;
@@ -487,21 +618,21 @@ nav {
   z-index: 10;
 }
 
-.container .box3:hover .link{
+.container .box3:hover .link {
   bottom: 30px;
   opacity: 1;
 }
 
-.container .box3 .project{
+.container .box3 .project {
   position: absolute;
-  top:50%;
-  left:50%;
+  top: 50%;
+  left: 50%;
   max-width: 300px;
   transition: 0.5s;
   z-index: 11;
   transition: 0.5s;
   transform-style: preserve-3d;
-  transform: translate3d(-50%,-50%,0px);
+  transform: translate3d(-50%, -50%, 0px);
 }
 
 .container .box4 {
@@ -514,8 +645,8 @@ nav {
   transform-style: preserve-3d;
 }
 
-.container .box4::before{
-  content: 'Euneva';
+.container .box4::before {
+  content: "Euneva";
   position: absolute;
   top: 20px;
   left: 35px;
@@ -527,11 +658,11 @@ nav {
 }
 
 .container .box4:hover::before,
-.container .box4:hover::after{
+.container .box4:hover::after {
   opacity: 0.04;
 }
 
-.container .box4 .name{
+.container .box4 .name {
   position: absolute;
   top: 0;
   left: 0;
@@ -539,24 +670,23 @@ nav {
   color: #fff;
   width: 100%;
   transform-style: preserve-3d;
-  transform: translate3d(0,0,75px);
+  transform: translate3d(0, 0, 75px);
   transition: 0.5s;
   opacity: 0;
   z-index: 10;
 }
 
-.container .box4:hover .name{
+.container .box4:hover .name {
   top: 40px;
   opacity: 1;
 }
 
-.container .box4 .link
-{
+.container .box4 .link {
   position: absolute;
-  bottom:0;
-  left:50%;
+  bottom: 0;
+  left: 50%;
   transform-style: preserve-3d;
-  transform: translate3d(-50%,0,75px);
+  transform: translate3d(-50%, 0, 75px);
   color: #fff;
   background: #333;
   padding: 10px 25px;
@@ -565,24 +695,23 @@ nav {
   transition: 0.5s;
   opacity: 0;
   z-index: 10;
-  
 }
 
-.container .box4:hover .link{
+.container .box4:hover .link {
   bottom: 30px;
   opacity: 1;
 }
 
-.container .box4 .project{
+.container .box4 .project {
   position: absolute;
-  top:25%;
-  left:0;
+  top: 25%;
+  left: 0;
   max-width: 300px;
   transition: 0.5s;
   z-index: 11;
   transition: 0.5s;
   transform-style: preserve-3d;
-  transform: translate3d(-50%,-50%,0px);
+  transform: translate3d(-50%, -50%, 0px);
 }
 
 .container .box5 {
@@ -595,8 +724,8 @@ nav {
   transform-style: preserve-3d;
 }
 
-.container .box5::before{
-  content: 'SafeWayz';
+.container .box5::before {
+  content: "SafeWayz";
   position: absolute;
   top: 20px;
   left: 30px;
@@ -608,11 +737,11 @@ nav {
 }
 
 .container .box5:hover::before,
-.container .box5:hover::after{
+.container .box5:hover::after {
   opacity: 0.04;
 }
 
-.container .box5 .name{
+.container .box5 .name {
   position: absolute;
   top: 0;
   left: 0;
@@ -620,24 +749,23 @@ nav {
   color: #fff;
   width: 100%;
   transform-style: preserve-3d;
-  transform: translate3d(0,0,75px);
+  transform: translate3d(0, 0, 75px);
   transition: 0.5s;
   opacity: 0;
   z-index: 10;
 }
 
-.container .box5:hover .name{
+.container .box5:hover .name {
   top: 40px;
   opacity: 1;
 }
 
-.container .box5 .link
-{
+.container .box5 .link {
   position: absolute;
-  bottom:0;
-  left:50%;
+  bottom: 0;
+  left: 50%;
   transform-style: preserve-3d;
-  transform: translate3d(-50%,0,75px);
+  transform: translate3d(-50%, 0, 75px);
   color: #fff;
   background: #333;
   padding: 10px 25px;
@@ -646,55 +774,54 @@ nav {
   transition: 0.5s;
   opacity: 0;
   z-index: 10;
-  
 }
 
-.container .box5:hover .link{
+.container .box5:hover .link {
   bottom: 30px;
   opacity: 1;
 }
 
-.container .box5 .project{
+.container .box5 .project {
   position: absolute;
-  top:25%;
-  left:0;
+  top: 25%;
+  left: 0;
   max-width: 300px;
   transition: 0.5s;
   z-index: 11;
   transition: 0.5s;
   transform-style: preserve-3d;
-  transform: translate3d(-50%,-50%,0px);
+  transform: translate3d(-50%, -50%, 0px);
 }
 
-.container .box1:hover .project{
-  transform: translate3d(-50%,-50%,100px) rotate(-15 deg);
+.container .box1:hover .project {
+  transform: translate3d(-50%, -50%, 100px) rotate(-15 deg);
 }
 
-.container .project{
+.container .project {
   transform: scale(0.2);
 }
 
-.container .box4 .project{
+.container .box4 .project {
   transform: scale(0.75);
 }
 
-.container .box5 .project{
+.container .box5 .project {
   transform: scale(0.75);
 }
 
-.container .link{
+.container .link {
   text-align: center;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 12px;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background: linear-gradient(transparent, #30ff00);
   border-radius: 6px;
 }
 
-::-webkit-scrollbar-thumb:hover{
+::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(transparent, #00c6ff);
 }
