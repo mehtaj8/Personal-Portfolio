@@ -825,3 +825,38 @@ nav {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(transparent, #00c6ff);
 }
+
+@media only screen and (max-width:700px){
+  #sectiontwo {
+    height: 350vh;
+  }
+  
+  .title {
+    left: 20%;
+  }
+
+  .container .box1 {
+    left: -60px;
+  }
+
+  .container .box2 {
+    left: -440px;
+    top: 450px;
+  }
+
+  .container .box3 {
+    left: -820px;
+    top: 900px;
+  }
+
+  .container .box4 {
+    left: -250px;
+    top: 870px;
+  }
+
+  .container .box5 {
+    left: -630px;
+    top: 1320px;
+  }
+
+}
